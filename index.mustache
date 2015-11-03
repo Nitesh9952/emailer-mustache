@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <div class="main vertical-align">
+      <div class="large">
+       <h3>{{message}}</h3>
+        <ul>
+          <!-- #users will iterate over the @users array -->
+          {{# users}}
+            <!-- 
+              will call the partial user.mustache, located from the directory Mustache.view_path
+              partials inherit the variables in scope, so we don't need to explicitly pass params 
+            -->
+            {{> user}}
+          {{/users}}
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- This is just a symlink to app/views/application/index.html.mustache 
+    Workaround while runnable isn't supporting .mustache files natively -->
+<html>
+<head>
+       <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+       <link rel="stylesheet" type="text/css" media="all" href="css/styles.css"/>
+</head>
+<body>
+  <div class="main vertical-align">
+    <div class="large">
+     <!-- message will be the value of @message defined on the action application#index -->
+     <h3>{{message}}</h3>
+      <ul>
+        <!-- #users will iterate over the @users array -->
+        {{# users}}
+          <!-- 
+            will call the partial user.mustache, located from the directory Mustache.view_path
+            partials inherit the variables in scope, so we don't need to explicitly pass params 
+          -->
+          {{> user}}
+        {{/users}}
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
