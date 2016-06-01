@@ -1,0 +1,13 @@
+<h1>Postman</h1>
+
+<%= form_tag '/postit' do %>
+  <p>
+    Template
+    <%= file_field_tag :template %>
+  </p>
+  <p>
+    Json
+    <%= file_field_tag :json %>
+  </p>
+  <%= submit_tag 'Post It' %>
+<% end %>

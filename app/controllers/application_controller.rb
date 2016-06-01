@@ -28,11 +28,19 @@ class ApplicationController < ActionController::Base
     , India
 "
     @segments = [{from: "Indira Gandhi Airport (DEL)", to: "Lok Nayak Jayaprakash (PAT)", dep: "18:35", arr: "20:05", airline: "Air India", aircode: "AI-415"}]
-    @paxes = [{name: "Mr. Nitesh Kumar(Adult)", pnr: "Y2TM1", total_price: "Rs. 1,249.0"},
+    @paxes = [{name: "Mr. Vinay Kumar(Adult)", pnr: "Y2TM1", total_price: "Rs. 1,249.0"},
               {name: "Mr. Anil Kumar(Adult)", pnr: "Y2TM2", total_price: "Rs. 1,249.0"}]
     @adult_price = "Rs. 194.0"
     @cash_back = "Rs. 800.0"
     @other_charges = "Rs. 3,104.0"
     @total = "Rs. 2,498"
+  end
+
+  def postman
+
+  end
+
+  def postit
+    render text: Mustache.render(File.read(params[:template]), File.read(params[:json]))
   end
 end
